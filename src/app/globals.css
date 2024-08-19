@@ -2,7 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.bg-partner{
+  background-image: url('../../public//assets/bg.jpg');
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  background-position: center ;
+  background-repeat: no-repeat;
+}
+
+.contact-bg{
+  background-image: url('../../public//assets/bg-gray.jpg');
+  /* width: 100%;
+  height: 100%; */
+  background-size: cover;
+  background-position: center ;
+  background-repeat: no-repeat;
+}
+
+.barCompleted{
+  width: 60%;
+  background-color: #f83730;
+  height: 10px;
+  margin: 20px 0;
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -30,4 +65,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
