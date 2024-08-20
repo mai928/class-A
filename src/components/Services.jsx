@@ -38,7 +38,7 @@ const Services = () => {
         },
     };
     return (
-        <section className='px-48 py-20'>
+        <section className='lg:px-28 py-20'>
             <h3 className='text-center text-3xl'>Our Services</h3>
             <Swiper
                 slidesPerView={3}
@@ -54,7 +54,7 @@ const Services = () => {
                             {/* "bg-white rounded-lg shadow-md overflow-hidden */}
                             <div className="p-5">
                                 <div className="text-center">
-                                    <img className='mx-auto rounded-full w-80 h-80 object-cover' alt={'img'} src={item.src} />
+                                    <img className='mx-auto rounded-full w-72 h-72 lg:w-80 lg:h-80 object-cover' alt={'img'} src={item.src} />
                                     <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{item.title}</h2>
                                     <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((truncateText(item.desc, 20))) }} />
                                      <div className='my-5'>

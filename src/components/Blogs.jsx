@@ -38,7 +38,7 @@ const Blogs = () => {
         },
     };
     return (
-        <section className='px-48 py-20'>
+        <section className='lg:px-28 py-20'>
             <h3 className='text-center text-3xl'>Our Blogs</h3>
             <Swiper
                 slidesPerView={3}
@@ -52,7 +52,7 @@ const Blogs = () => {
                     {blogsData?.map((item, index) => (
                         <SwiperSlide key={index} className=" mt-5">
                             {/* "bg-white rounded-lg shadow-md overflow-hidden */}
-                            <div className="">
+                            <div className="text-center lg:text-start">
                                 <div className="p-1">
                                     <img className='mx-auto  object-cover' alt={'img'} src={item.src} />
                                     <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{item.title}</h2>
