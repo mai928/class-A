@@ -60,15 +60,15 @@ const Slider = () => {
                     sliderData.map((slide, index) => (
                         <SwiperSlide key={index} className="swiper-slide relative">
                             <div className='relative'>
-                                <img className='w-full h-[75vb] lg:h-[110vb] ' loading='eager' alt='img' src={slide.img} />
+                                <img className='w-full h-[60vb] lg:h-[110vb] ' loading='eager' alt='img' src={slide.img} />
                                 <div className='absolute top-0 bottom-0 right-0 left-0 bg-black bg-opacity-50'></div>
 
                             </div>
-                            {/* <div className='absolute inset-0 top-72 lg:top-52 flex flex-col justify-center text-center items-center '>
+                            <div className='absolute inset-0 top-72 lg:top-52 flex flex-col justify-center text-center items-center '>
                                 <h2 className=' text-lg lg:text-8xl text-white'>{slide.heading}</h2>
                                 <p className='lg:mt-16 mb-10 text-white font-Outfit text-[12px] lg:text-[17px] font-semibold lg:font-bold w-[80%]'>{slide.desc}</p>
                                 <Link href={'/'} className=' my-14 bg-primary_Color_Light hover:bg-primary_Color_dark text-[13px] lg:text-lg text-white ] py-3 px-4   '>Discover More</Link>
-                                <div className='w-[80%]'>
+                                {/* <div className='w-[80%]'>
                                     <div className='border-t-[1px] border-dark_gray ' />
                                     <div className=' flex  justify-between items-center my-10 '>
                                         <div className=''>
@@ -83,10 +83,10 @@ const Slider = () => {
                                         </div>
                                         <CountDownTimer />
                                     </div>
-                                </div>
+                                </div> */}
 
 
-                            </div> */}
+                            </div>
 
 
                         </SwiperSlide>
