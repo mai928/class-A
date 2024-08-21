@@ -1,11 +1,14 @@
-import { Inter } from "next/font/google";
+import { Inter, Lato } from "next/font/google";
 import "./globals.css";
 import FirstNav from "@/components/FirstNav";
 import SecondNav from "@/components/SecondNav";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({
+	subsets: ["latin-ext"],
+	weight: ["400", "700"], // Specify the weights you want to use
+});
 
 export const metadata = {
 	title: "Create Next App",
@@ -15,10 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
-				<Header/>
+			<body className={lato.className}>
+				<Header />
 				{children}
-				<Footer/>
+				<Footer />
 			</body>
 		</html>
 	);

@@ -6,7 +6,8 @@ import Link from 'next/link';
 const Partner = () => {
     return (
         <section className='bg-partner ' >
-            <div className='lg:mx-28 py-20 lg:flex relative'>
+
+            <div className='lg:mx-28 py-20 lg:flex relative z-20 '>
 
                 <div className='m-auto lg:m-0 w-[90%] lg:w-[70%] border-[1px] border-light_gray p-10'>
                     <div className='lg:w-[60%]  text-center lg:text-start'>
@@ -21,7 +22,7 @@ const Partner = () => {
 
                 </div>
                 <div className='lg:absolute lg:start-[50%]  lg:top-[23%] p-4 lg:p-0'>
-                    <img alt='img' className='w-[600px]  ' src='/assets/boy.jpg' />
+                    <img alt='img' className='w-[500px]  ' src='/assets/bg4.jpg' />
                 </div>
             </div>
 

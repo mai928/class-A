@@ -123,20 +123,15 @@ export const navbarLink = [
 
 export const sliderData = [
 	{
-		img:'/assets/slider1.jpg',
+		img:'assets/bg2-remove.jpeg',
 		heading: "Save the Life",
 		desc: "Help People for their needs all over the world!"
 	},
 	{
-		img: 'assets/slider2.jpg',
+		img: 'assets/slider11-remove.jpeg',
 		heading: "Save the Life",
 		desc: "Help People for their needs all over the world!"
-	},
-    {
-		img: 'assets/slider3.jpg',
-		heading: "Save the Life",
-		desc: "Help People for their needs all over the world!"
-	},
+	}
 ];
 
 export const services = [
