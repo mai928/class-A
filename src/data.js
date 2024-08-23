@@ -100,23 +100,23 @@ export const navbarLink = [
 		name: "Home",
 	},
 	{
-		path: "",
-		name: "Blog",
+		path: "/about",
+		name: "About",
+	},
+	{
+		path: "/brands",
+		name: "Brands",
+	},
+	{
+		path: "/media",
+		name: "Media",
 	},
 	{
 		path: "",
-		name: "Features",
+		name: "Business",
 	},
 	{
-		path: "",
-		name: "projects",
-	},
-	{
-		path: "",
-		name: "Gallary",
-	},
-	{
-		path: "",
+		path: "/contact",
 		name: "Contact",
 	},
 ];
@@ -186,5 +186,52 @@ export const blogsData = [
 		src: '/assets/service.jpg',
 		title: "Test-Bottle4",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
+	},
+];
+
+export const brandImages = [
+	{
+		id: 1,
+		src: '/assets/service.jpg',
+	
+	},
+	{
+		id: 2,
+		src: '/assets/service.jpg',
+		
+	},
+	{
+		id: 3,
+		src: '/assets/service.jpg',
+		
+	},
+	{
+		id: 4,
+		src: '/assets/service.jpg',
+	
+	},
+];
+
+
+export const mediaData = [
+	{
+		id: 1,
+		src: '/media/video1.mp4',
+	
+	},
+	{
+		id: 2,
+		src: '/media/video1.mp4',
+		
+	},
+	{
+		id: 3,
+		src: '/media/video1.mp4',
+		
+	},
+	{
+		id: 4,
+		src: '/media/video1.mp4',
+	
 	},
 ];

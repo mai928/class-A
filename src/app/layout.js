@@ -1,4 +1,4 @@
-import { Inter, Lato } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import FirstNav from "@/components/FirstNav";
 import SecondNav from "@/components/SecondNav";
@@ -19,9 +19,12 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={lato.className}>
+				<section>
 				<Header />
 				{children}
 				<Footer />
+				</section>
+				
 			</body>
 		</html>
 	);
