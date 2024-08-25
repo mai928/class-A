@@ -96,7 +96,7 @@ export const iconsNavbar = [
 
 export const navbarLink = [
 	{
-		path: "",
+		path: "/",
 		name: "Home",
 	},
 	{
@@ -112,7 +112,7 @@ export const navbarLink = [
 		name: "Media",
 	},
 	{
-		path: "",
+		path: "/business",
 		name: "Business",
 	},
 	{
@@ -138,25 +138,51 @@ export const services = [
 	{
 		id: 1,
 		src: '/assets/service.jpg',
-		title: "Test-Bottle1",
+		title: "Brand1",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 2,
 		src: '/assets/service.jpg',
-		title: "Test-Bottle2",
+		title: "Brand2",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 3,
 		src: '/assets/service.jpg',
-		title: "Test-Bottle3",
+		title: "Brand3",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 4,
 		src: '/assets/service.jpg',
-		title: "Test-Bottle4",
+		title: "Brand4",
+		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
+	},
+];
+export const produscts = [
+	{
+		id: 1,
+		src: '/assets/service.jpg',
+		title: "Product1",
+		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
+	},
+	{
+		id: 2,
+		src: '/assets/service.jpg',
+		title: "Product2",
+		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
+	},
+	{
+		id: 3,
+		src: '/assets/service.jpg',
+		title: "Product3",
+		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
+	},
+	{
+		id: 4,
+		src: '/assets/service.jpg',
+		title: "Product4",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 ];
@@ -193,21 +219,42 @@ export const brandImages = [
 	{
 		id: 1,
 		src: '/assets/service.jpg',
+		name:'Name1'
 	
 	},
 	{
 		id: 2,
 		src: '/assets/service.jpg',
+		name:'Name1'
+
 		
 	},
 	{
 		id: 3,
 		src: '/assets/service.jpg',
+		name:'Name1'
+
 		
 	},
 	{
 		id: 4,
 		src: '/assets/service.jpg',
+		name:'Name1'
+
+	
+	},,
+	{
+		id: 5,
+		src: '/assets/service.jpg',
+		name:'Name1'
+
+		
+	},
+	{
+		id: 6,
+		src: '/assets/service.jpg',
+		name:'Name1'
+
 	
 	},
 ];

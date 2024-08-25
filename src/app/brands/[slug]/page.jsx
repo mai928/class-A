@@ -9,11 +9,15 @@ import "swiper/css";
 import 'swiper/css/navigation' // Ensure this is included
 import "swiper/css/pagination";
 import 'swiper/css/autoplay'
-import { brandImages, services } from '@/data'
+import { brandImages, produscts, services } from '@/data'
+import DOMPurify from 'isomorphic-dompurify'
 
 const BrandDetails = () => {
 
     const path = usePathname()
+    const truncateText = (text, wordCount) => {
+        return text?.split(' ').slice(0, wordCount).join(' ') + '...';
+    };
 
     return (
         <section>
@@ -54,7 +58,7 @@ const BrandDetails = () => {
 
 
                 {/* images */}
-                <div className='py-10'>
+                {/* <div className='py-10'>
                     <Swiper
                     className='overflow-auto'
                     modules={[Autoplay]}
@@ -85,8 +89,30 @@ const BrandDetails = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>  
+                </div> */}
+
+
+                <div className='grid grid-cols-1 lg:grid-cols-2  gap-10 mx-28 py-10'>
+                    {produscts?.map((item, index) => (
+                        <div key={index} className=" mt-5">
+                            {/* "bg-white rounded-lg shadow-md overflow-hidden */}
+                            <div className="">
+                                <div className="text-center">
+                                    <img className='mx-auto  w-72 h-72 lg:w-full object-cover' alt={'img'} src={item.src} />
+                                    <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{item.title}</h2>
+                                    <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((truncateText(item.desc, 20))) }} />
+                                    <div className='my-5'>
+                                        <Link href={`/brands/${item.id}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
+                                            Read More
+                                        </Link>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-              
+
             </div>
 
         </section>

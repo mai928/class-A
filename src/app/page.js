@@ -6,6 +6,7 @@ import Services from "@/components/Brands";
 import Slider from "@/components/slider/Slider";
 import Video from "@/components/Video";
 import Brands from "@/components/Brands";
+import Team from "@/components/Team";
 
 export default function Home() {
 	return (
@@ -16,6 +17,7 @@ export default function Home() {
 			<Video/>
 			<Blogs />
 			<Contact />
+			<Team/>
 		</main>
 	);
 }

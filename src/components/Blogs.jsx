@@ -44,6 +44,7 @@ const Blogs = () => {
                 slidesPerView={3}
                 breakpoints={breakpoints}
                 autoplay={{ delay: 4000 }}
+                speed={1000}
                 loop={true}
                 modules={[Navigation, Autoplay, Pagination]}
 
