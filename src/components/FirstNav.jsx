@@ -1,6 +1,7 @@
 import { iconsNavbar } from '@/data'
 import Link from 'next/link'
 import React from 'react'
+import LanguageChanger from './LanguageChanger'
 
 const FirstNav = ({ showmenuIcon }) => {
     return (
@@ -52,9 +53,10 @@ const FirstNav = ({ showmenuIcon }) => {
                             </div>
                         </div>
 
-                        <div>
+                        {/* <div>
                             <Link href={'/'} className='bg-primary_Color_Light  hover:bg-primary_Color_dark  text-white py-3 px-10 text-center text-lg'>Contact</Link>
-                        </div>
+                        </div> */}
+                        <LanguageChanger/>
                     </div>
 
                 </section >)

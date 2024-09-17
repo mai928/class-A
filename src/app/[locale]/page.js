@@ -8,11 +8,11 @@ import Video from "@/components/Video";
 import Brands from "@/components/Brands";
 import Team from "@/components/Team";
 
-export default function Home() {
+export default function Home({params}) {
 	return (
 		<main className="">
 			<Slider />
-			<About />
+			<About params={params} />
 			<Brands/>
 			<Video/>
 			<Blogs />
