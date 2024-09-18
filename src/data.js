@@ -1,5 +1,6 @@
 export const iconsNavbar = [
 	{
+		name: 'FaceBook',
 		icon: (
 			// face
 			<svg
@@ -14,6 +15,7 @@ export const iconsNavbar = [
 	},
 	{
 		// insta
+		name: 'Instagram',
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +29,7 @@ export const iconsNavbar = [
 	},
 	{
 		// twitter
+		name: 'Twitter',
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +44,7 @@ export const iconsNavbar = [
 	{
 		// google
 
+		name: 'Google',
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +59,7 @@ export const iconsNavbar = [
 
 	{
 		// linkedin
+		name: 'LinkedIn',
 		icon: (
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +128,7 @@ export const navbarLink = [
 
 export const sliderData = [
 	{
-		img:'assets/bg2-remove.jpeg',
+		img: 'assets/bg2-remove.jpeg',
 		heading: "Save the Life",
 		desc: "Help People for their needs all over the world!"
 	},
@@ -219,43 +224,43 @@ export const brandImages = [
 	{
 		id: 1,
 		src: '/assets/service.jpg',
-		name:'Name1'
-	
+		name: 'Name1'
+
 	},
 	{
 		id: 2,
 		src: '/assets/service.jpg',
-		name:'Name1'
+		name: 'Name1'
 
-		
+
 	},
 	{
 		id: 3,
 		src: '/assets/service.jpg',
-		name:'Name1'
+		name: 'Name1'
 
-		
+
 	},
 	{
 		id: 4,
 		src: '/assets/service.jpg',
-		name:'Name1'
+		name: 'Name1'
 
-	
-	},,
+
+	}, ,
 	{
 		id: 5,
 		src: '/assets/service.jpg',
-		name:'Name1'
+		name: 'Name1'
 
-		
+
 	},
 	{
 		id: 6,
 		src: '/assets/service.jpg',
-		name:'Name1'
+		name: 'Name1'
 
-	
+
 	},
 ];
 
@@ -264,21 +269,21 @@ export const mediaData = [
 	{
 		id: 1,
 		src: '/media/video1.mp4',
-	
+
 	},
 	{
 		id: 2,
 		src: '/media/video1.mp4',
-		
+
 	},
 	{
 		id: 3,
 		src: '/media/video1.mp4',
-		
+
 	},
 	{
 		id: 4,
 		src: '/media/video1.mp4',
-	
+
 	},
 ];

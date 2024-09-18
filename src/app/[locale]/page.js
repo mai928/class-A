@@ -16,7 +16,7 @@ export default function Home({params}) {
 			<Brands/>
 			<Video/>
 			<Blogs />
-			<Contact />
+			<Contact params={params} />
 			<Team/>
 		</main>
 	);

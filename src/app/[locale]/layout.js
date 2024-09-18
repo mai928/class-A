@@ -33,9 +33,9 @@ export default async function RootLayout({ children, params }) {
 					resources={resources}
 				>
 					<section>
-						<Header />
+						<Header params={params} />
 						{children}
-						<Footer />
+						<Footer params={params} />
 					</section>
 				</TranslationsProvider>
 			</body>

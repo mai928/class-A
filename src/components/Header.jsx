@@ -5,7 +5,7 @@ import SecondNav from './SecondNav'
 import Link from 'next/link'
 import { navbarLink } from '@/data'
 
-const Header = () => {
+const Header = ({params}) => {
 
   const [toggle, setToggle] = useState(false)
   const [showmenuIcon, setshowmenuIcon] = useState(false)
@@ -92,7 +92,7 @@ const Header = () => {
             </div>
           </div>
         ) : (
-          <div> <FirstNav showmenuIcon={showmenuIcon} />
+          <div> <FirstNav showmenuIcon={showmenuIcon} params={params} />
             <SecondNav showmenuIcon={showmenuIcon} />
           </div>
         )
