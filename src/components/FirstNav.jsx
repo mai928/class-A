@@ -1,18 +1,55 @@
+"use client"
 import { iconsNavbar } from '@/data'
-import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LanguageChanger from './LanguageChanger'
+import { useTranslation } from 'react-i18next'
+import Link from 'next/link'
+import { fetchApi, fetchData } from '../../utils/api'
 
 const FirstNav = ({ showmenuIcon }) => {
+
+
+    const { t, i18n } = useTranslation()
+    const [setting, setData] = useState([])
+    const [social, setSocial] = useState([])
+
+    useEffect(() => {
+        const fetchSetting = async () => {
+            const response = await fetchData(`api/settings`, i18n.language)
+            setData(response?.data)
+        }
+
+        const fetchSocial = async () => {
+            const res = await fetchApi(`api/social-media`, i18n.language)
+            setSocial(res?.data)
+        }
+
+        fetchSocial()
+        fetchSetting()
+
+
+
+
+    }, [])
+
+
+
+
+
     return (
         <>
             {
-                showmenuIcon===false && (<section className='flex justify-between items-center px-28 py-6'>
+                showmenuIcon === false && (<section className='flex justify-between items-center px-28 py-6'>
                     <div className='flex gap-5'>
                         {
                             iconsNavbar?.map((icon, index) => (
                                 <div className='' key={index}>
-                                    <div className='hover:fill-primary_Color_Light cursor-pointer'>{icon.icon}</div>
+                                    <Link href={
+                                        icon.name === 'FaceBook' ? social.facebook || '/' :
+                                            icon.name === 'Instagram' ? '/' :
+                                                icon.name === 'Twitter' ? social.twitter || '/' :
+                                                    icon.name === 'Google' ? '/' :
+                                                        icon.name === 'LinkedIn' ? social.linkedin || '/' : '/'} className='hover:fill-primary_Color_Light cursor-pointer'>{icon.icon}</Link>
                                 </div>
                             ))
                         }
@@ -28,7 +65,15 @@ const FirstNav = ({ showmenuIcon }) => {
                             </div>
 
                             <div>
-                                <p className='text-dark_gray text-xl'>info@gmail.com</p>
+                                <div>
+                                    {
+                                        setting?.contact_emails?.map((item) => (
+                                            <Link href={`mailto:${item}`}> 
+                                                 <p className='text-dark_gray text-xl'>{item}</p>
+                                            </Link>
+                                        ))
+                                    }
+                                </div>
                                 <p className='text-dark_gray text-[15px]'>Our email</p>
                             </div>
                         </div>
@@ -48,7 +93,12 @@ const FirstNav = ({ showmenuIcon }) => {
                                 </svg>
                             </div>
                             <div>
-                                <p className='text-dark_gray text-xl'>800 516 3290</p>
+                                {
+                                    setting?.photos?.map((item) => (
+                                        <p className='text-dark_gray text-xl'>{item}</p>
+
+                                    ))
+                                }
                                 <p className='text-dark_gray text-[15px]'>9:00 A.M - 5:00 P.M</p>
                             </div>
                         </div>
@@ -56,7 +106,7 @@ const FirstNav = ({ showmenuIcon }) => {
                         {/* <div>
                             <Link href={'/'} className='bg-primary_Color_Light  hover:bg-primary_Color_dark  text-white py-3 px-10 text-center text-lg'>Contact</Link>
                         </div> */}
-                        <LanguageChanger/>
+                        <LanguageChanger />
                     </div>
 
                 </section >)
