@@ -44,7 +44,7 @@ const Brands = () => {
     const [brands, setData] = useState([])
     useEffect(() => {
         const fetchBrand = async () => {
-            const response = await fetchData(`api/services`, i18n.language)
+            const response = await fetchData(`api/categories`, i18n.language)
             setData(response.data)
         }
 

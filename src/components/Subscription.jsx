@@ -32,7 +32,6 @@ const Subscription = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-
         try {
 
 
