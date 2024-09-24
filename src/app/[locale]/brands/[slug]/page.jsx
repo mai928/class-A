@@ -4,15 +4,28 @@ import React from 'react'
 import { brandImages, produscts, services } from '@/data'
 import DOMPurify from 'isomorphic-dompurify'
 import MainBackground from '@/components/MainBackground'
+import initTranslations from '@/app/i18n'
+import { fetchData } from '../../../../../utils/api'
 
-const BrandDetails = () => {
+const BrandDetails = async ({ params }) => {
 
-   
+
+    const i18nNamespaces = ["home"];
+
+    const { locale } = params
+    const slug = params.slug
+
+
+    const { t } = await initTranslations(locale, i18nNamespaces)
+    const Data = await fetchData(`api/single-category/${slug}`, locale)
+    const brandsDetails = Data?.data
+
+
 
     return (
         <section>
-           
-            <MainBackground/>
+
+            <MainBackground />
 
             <div className=' px-10 lg:px-28 py-20'>
                 <div className='block lg:flex justify-between '>
@@ -28,7 +41,7 @@ const BrandDetails = () => {
                 </div>
 
 
-                   
+
 
 
                 <div className='grid grid-cols-1 lg:grid-cols-2  gap-10 mx-28 py-10'>
