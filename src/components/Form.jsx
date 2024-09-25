@@ -43,7 +43,7 @@ const Form = () => {
 
       const myHeaders = new Headers();
       myHeaders.append("Accept-Language", i18n.language);
-      myHeaders.append("Cookie", "laravel_session=gwHNlePT7RSASLV6ZFEw1MRgqeeM2mdfNucQv2Nn");
+      myHeaders.append("Cookie", "laravel_session=qqnKJa8kJEfXJDFZdRxVxOndbiYVEz6rjs4uLiyr");
 
 
       const formdata = new FormData();
@@ -91,27 +91,27 @@ const Form = () => {
           name='name'
           value={formData.name}
           onChange={handleChange}
-          required className='block mt-3  lg:mt-0 w-full border-gray-300 px-5 border-solid border-[1px] lg:w-1/3 py-2 placeholder:text-dark_gray' placeholder='Name' />
+          required className='block mt-3  lg:mt-0 w-full border-gray-300 px-5 border-solid border-[1px] lg:w-1/3 py-2 placeholder:text-dark_gray' placeholder={t('Name' )}/>
         <input type='email'
           id='email'
           name='email'
           value={formData.email}
           onChange={handleChange}
-          required className='block mt-3  lg:mt-0 w-full border-gray-300 px-5 border-solid border-[1px] lg:w-1/3 py-2 placeholder:text-dark_gray' placeholder='Email' />
+          required className='block mt-3  lg:mt-0 w-full border-gray-300 px-5 border-solid border-[1px] lg:w-1/3 py-2 placeholder:text-dark_gray' placeholder={t('Email')} />
         <input type='number'
           id='phone'
           name='phone'
           value={formData.phone}
           onChange={handleChange}
-          required className='block mt-3  lg:mt-0 w-full border-gray-300 px-5 border-solid border-[1px] lg:w-1/3 py-2 placeholder:text-dark_gray' placeholder='Phone' />
+          required className='block mt-3  lg:mt-0 w-full border-gray-300 px-5 border-solid border-[1px] lg:w-1/3 py-2 placeholder:text-dark_gray' placeholder={t('Phone')} />
       </div>
       <textarea id='message'
         name='message'
         value={formData.message}
         onChange={handleChange}
-        required className='border-gray-300 px-5 border-solid border-[1px] w-full my-5 pt-2 pb-10 placeholder:text-dark_gray' cols={5} placeholder='Message' />
+        required className='border-gray-300 px-5 border-solid border-[1px] w-full my-5 pt-2 pb-10 placeholder:text-dark_gray' cols={5} placeholder={t('Message')} />
       <div>
-        <button type='submit' className='bg-primary_Color_Light text-white px-10 py-3 hover:bg-primary_Color_dark hover:text-lg'>Send Now</button>
+        <button type='submit' className='bg-primary_Color_Light text-white px-10 py-3 hover:bg-primary_Color_dark hover:text-lg'>{t("Send")}</button>
       </div>
       
       <div>

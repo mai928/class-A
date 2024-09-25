@@ -4,8 +4,12 @@ import FirstNav from './FirstNav'
 import SecondNav from './SecondNav'
 import Link from 'next/link'
 import { navbarLink } from '@/data'
+import { useTranslation } from 'react-i18next'
+import { fetchData } from '../../utils/api'
+import LanguageChanger from './LanguageChanger'
 
 const Header = () => {
+  const { t, i18n } = useTranslation()
 
   const [toggle, setToggle] = useState(false)
   const [showmenuIcon, setshowmenuIcon] = useState(false)
@@ -79,20 +83,34 @@ const Header = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     }
   }, [toggle])
+
+
+
+
+  const [settings, setData] = useState('')
+  useEffect(() => {
+    const settingFetch = async () => {
+      const data = await fetchData(`api/settings`, i18n.language)
+      setData(data?.data)
+
+    }
+
+    settingFetch()
+  }, [])
   return (
     <section className=''>
       <div>{
         showmenuIcon === true ? (
-          <div className={`w-full p-2 z-50 ${isFixed ? 'fixed top-0  bg-black' : 'absolute top-0 '}`}>
+          <div className={`w-full pe-8 z-50 ${isFixed ? 'fixed top-0  bg-black' : 'absolute top-0 '}`}>
             <div className=' flex justify-between items-center'>
               <div>
-                <img alt='logo' className='w-24' src='/assets/logo.png' />
+                <img alt='logo' className='w-36' src={settings?.logo} />
               </div>
               <div onClick={() => setToggle(!toggle)}> <svg xmlns="http://www.w3.org/2000/svg" width={20} className='fill-white ' viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" /></svg></div>
             </div>
           </div>
         ) : (
-          <div> <FirstNav showmenuIcon={showmenuIcon}  />
+          <div> <FirstNav showmenuIcon={showmenuIcon} />
             <SecondNav showmenuIcon={showmenuIcon} />
           </div>
         )
@@ -104,7 +122,7 @@ const Header = () => {
           <div className={`sidebar ${toggle ? "open" : "close"} `}>
             <div className="p-10">
               <div className="flex justify-between items-center mb-10">
-                <Link href={'/'}><img alt="logo" width={100} height={'auto'} src={'/assets/logo.png'} /></Link>
+                <Link href={'/'}><img alt="logo" width={100} height={'auto'} src={settings?.logo} /></Link>
               </div>
 
               <ul>
@@ -130,7 +148,7 @@ const Header = () => {
                         href={item.path}
                         onClick={() => setToggle(false)}
                       >
-                        {(item.name)}
+                        {t(item.name)}
                       </Link>
                     </li>
 
@@ -154,11 +172,11 @@ const Header = () => {
 
 
                 </div>
-                {/* <LanguageChanger /> */}
-
 
 
               </div>
+              <LanguageChanger/>
+
             </div>
           </div>
         </div>

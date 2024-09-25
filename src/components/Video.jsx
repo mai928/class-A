@@ -1,13 +1,25 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProgressBar from "@ramonak/react-progress-bar";
 import Link from 'next/link';
 import { fetchData } from '../../utils/api';
+import { useTranslation } from 'react-i18next';
 
 const Video = () => {
     const [showImage, setShowImage] = useState(true);
 
-   
+    const { t, i18n } = useTranslation()
+
+    const [mediaData, setData] = useState([])
+    useEffect(() => {
+        const fetchSlider = async () => {
+            const data = await fetchData(`api/videos`, i18n.language)
+            setData(data?.data)
+
+        }
+
+        fetchSlider()
+    }, [])
 
     return (
         <section className='bg-partner ' >
@@ -16,12 +28,12 @@ const Video = () => {
 
                 <div className='m-auto lg:m-0 w-[90%] lg:w-[70%] border-[1px] border-light_gray p-10'>
                     <div className='lg:w-[60%]  text-center lg:text-start'>
-                        <h3 className='text-white text-xl lg:text-3xl font-semibold py-5'>Helping children in Nigeria
+                        <h3 className='text-white text-xl lg:text-3xl font-semibold py-5'>{t("Innovations & Integration to lead the market.")}
                         </h3>
-                        <p className='text-white leading-8'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <p className='text-white leading-8'>{t("Class A Food Industries, operating branches & warehouses network, plays a vital role in streamlining the supply chain by connecting our factory with different market sectors")}</p>
                         <ProgressBar completed={''} className='' barContainerClassName='bg-white' completedClassName='barCompleted' />
                         <div className='py-5'>
-                            <Link href={'/media'} className='border-2 px-10 py-3 text-white font-semibold text-lg hover:text-black hover:bg-white'>Show More</Link>
+                            <Link href={'/media'} className='border-2 px-10 py-3 text-white font-semibold text-lg hover:text-black hover:bg-white'>{t("Show More")}</Link>
                         </div>
                     </div>
 
@@ -32,7 +44,7 @@ const Video = () => {
                 <div className='lg:absolute lg:start-[50%] lg:top-[20%] p-4 lg:p-0'>
                     <div>
                         {!showImage && (
-                            <video src='/media/video1.mp4' className='h-[320px] ' autoPlay controls />
+                            <video src={mediaData[0]} className='h-[320px] ' autoPlay controls />
                         )}
                     </div>
 

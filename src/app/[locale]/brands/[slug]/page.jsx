@@ -10,6 +10,10 @@ import { fetchData } from '../../../../../utils/api'
 const BrandDetails = async ({ params }) => {
 
 
+    const truncateText = (text, wordCount) => {
+        return text?.split(' ').slice(0, wordCount).join(' ') + '...';
+    };
+
     const i18nNamespaces = ["home"];
 
     const { locale } = params
@@ -20,8 +24,6 @@ const BrandDetails = async ({ params }) => {
     const Data = await fetchData(`api/single-category/${slug}`, locale)
     const brandsDetails = Data?.data
 
-    const product = await fetchData(`api/services`, locale)
-    const productData = product?.data
 
 
 
@@ -30,11 +32,16 @@ const BrandDetails = async ({ params }) => {
 
             <MainBackground />
 
-            <div className=' px-10 lg:px-28 py-20'>
+            <div className=' px-5 lg:px-28 py-20'>
                 <div className='block lg:flex justify-between '>
                     <div className=' w-full lg:w-[45%]  text-center lg:text-start'>
-                        <h3 className='text-xl lg:text-3xl'>{brandsDetails?.title}</h3>
-                        <p className='pt-5 pb-10 text-meduim_gray  text-[15px] leading-8 '>{brandsDetails?.details}</p>
+                        <h3 className='text-xl lg:text-3xl font-semibold'>{t(brandsDetails?.title)}</h3>
+                        <div className=" text-meduim_gray  text-[18px] leading-10 " dangerouslySetInnerHTML={{
+                            __html: DOMPurify.sanitize(t(brandsDetails.details), {
+                                ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br', 'ul', 'li', 'ol', 'span'],
+                                ALLOWED_ATTR: ['href', 'target', 'style']
+                            })
+                        }} />
                     </div>
                     <div className='w-full lg:w-[45%] mt-10 lg:mt-0'>
                         <img className='object-cover' src={brandsDetails?.photo} />
@@ -46,27 +53,40 @@ const BrandDetails = async ({ params }) => {
 
 
 
+                <div className='py-10'>
 
-                <div className='grid grid-cols-1 lg:grid-cols-2  gap-10 mx-28 py-10'>
-                    {productData?.map((item, index) => (
-                        <div key={index} className=" mt-5">
-                            {/* "bg-white rounded-lg shadow-md overflow-hidden */}
-                            <div className="">
-                                <div className="text-center">
-                                    <img className='mx-auto  w-72 h-72 lg:w-full object-cover' alt={'img'} src={item.photo} />
-                                    <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{item.title}</h2>
-                                    {/* <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((truncateText(item.desc, 20))) }} /> */}
-                                    <div className='my-5'>
-                                        <Link href={`/brands/${item.slug}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
-                                            Read More
-                                        </Link>
+                    <div className='text-center'>
+                        <p className='text-primary_Color_dark py-3 font-semibold text-xl'>{t(brandsDetails?.title)}</p>
+                        <h3 className='text-6xl font-semibold'>{t("Our Product")}</h3>
+                    </div>
+                    <div className='grid grid-cols-1 lg:grid-cols-2  lg:gap-10 lg:mx-16 py-10'>
+                        {brandsDetails?.products?.map((item, index) => (
+                            <div key={index} className=" mt-5  border-2 border-gray-100 rounded-xl shadow-lg">
+                                <div className="">
+                                    <div className="text-center">
+                                        <img className='mx-auto  w-72 h-72 lg:w-full object-cover' alt={'img'} src={item.photo} />
+                                        <div className='py-5'> <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{t(item.title)}</h2>
+                                            <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{
+                                                __html: DOMPurify.sanitize(t(truncateText(item.details, 20)), {
+                                                    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br', 'ul', 'li', 'ol', 'span'],
+                                                    ALLOWED_ATTR: ['href', 'target', 'style']
+                                                })
+                                            }} />
+                                            <div className='my-5'>
+                                                <Link href={`/brands/singleproduct/${item.slug}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
+                                                    {t("Read More")}
+                                                </Link>
+                                            </div>
+                                        </div>
+
+
                                     </div>
-
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
+
 
             </div>
 

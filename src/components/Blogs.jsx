@@ -59,7 +59,7 @@ const Blogs = () => {
     return (
         <section className='lg:px-28 py-20'>
 
-            <h3 className='text-center text-3xl'>Our Blogs</h3>
+            <h3 className='text-center text-4xl font-semibold'>{t("Our Blogs")}</h3>
             {
                 loading || blogs.length == 0? (
                     <LoaderComponent/>
@@ -83,7 +83,7 @@ const Blogs = () => {
                                         <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((truncateText(t(item?.details || ''), 20))) }} />
                                         <div className='my-10'>
                                             <Link href={`/`} className={'text-black border-2 border-gray-400   hover:border-primary_Color_Light hover:text-primary_Color_Light py-3 px-4'} >
-                                                Read More
+                                                {t("Read More")}
                                             </Link>
                                         </div>
 

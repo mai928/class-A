@@ -1,5 +1,4 @@
 'use client'
-import { brandImages } from '@/data'
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -31,7 +30,7 @@ const Team = () => {
     return (
         <section className='py-20 lg:px-28'>
             {/* images */}
-            <h3 className='text-center text-4xl'>Our Team</h3>
+            <h3 className='text-center text-4xl font-semibold'>{t("Our Team")}</h3>
             {
                 loading ? (<LoaderComponent />) : (<div className='py-10'>
                     <Swiper
@@ -61,7 +60,7 @@ const Team = () => {
                         {team.map((partner, index) => (
                             <SwiperSlide key={index}>
                                 <img className='w-[250px] h-[250px] rounded-full m-auto' src={partner.photo} alt={`Partner ${index + 1}`} />
-                                <p className='text-center py-2 font-semibold text-lg'>{partner.title}</p>
+                                <p className='text-center py-2 font-semibold text-lg'>{t(partner.title)}</p>
                             </SwiperSlide>
                         ))}
                     </Swiper>

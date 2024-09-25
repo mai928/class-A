@@ -26,7 +26,7 @@ const About = async ({ params }) => {
                     <div className=' w-full lg:w-[45%]  text-center lg:text-start'>
                         <h3 className='text-xl lg:text-3xl'>{t(aboutData?.title)}</h3>
                         <div className='pt-5 pb-10 text-meduim_gray  text-[15px] leading-8 ' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(truncateText(aboutData?.details || '', 50))) }} />
-                        <Link href={'/about'} className='bg-primary_Color_Light hover:bg-primary_Color_dark px-5 py-3 text-white'>Read More</Link>
+                        <Link href={'/about'} className='bg-primary_Color_Light hover:bg-primary_Color_dark px-5 py-3 text-white'>{t("Read More")} </Link>
                     </div>
                     <div className='w-full lg:w-[45%] mt-10 lg:mt-0'>
                         <img className='object-cover' src={aboutData?.photo} />

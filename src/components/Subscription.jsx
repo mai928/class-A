@@ -37,7 +37,7 @@ const Subscription = () => {
 
             const myHeaders = new Headers();
             myHeaders.append("Accept-Language", i18n.language);
-            myHeaders.append("Cookie", "laravel_session=6oM3FFaszfcS2bV3nWtBQrSNpkdvu3BvQxhRc6h0");
+            myHeaders.append("Cookie", "laravel_session=qqnKJa8kJEfXJDFZdRxVxOndbiYVEz6rjs4uLiyr");
 
 
             const formdata = new FormData();
@@ -82,11 +82,11 @@ const Subscription = () => {
             <div className='bg-primary_Color_Light '>
                 <div className='block lg:flex justify-between  items-center text-center lg:text-start lg:mx-28 py-10'>
                     <div>
-                        <h3 className='text-3xl text-white'>Subscribe for <span className='text-black font-bold '>News</span>letter</h3>
+                        <h3 className='text-3xl text-white'>{t("Subscribe for")}<span className='text-black font-bold '>{t("News")}</span>{t("letter")}</h3>
                     </div>
                     <form onSubmit={handleSubmit} className='block lg:flex items-center gap-5'>
-                        <input type='email' id='email' name='email' required value={formData.email} onChange={handleChange} className='block  m-auto  py-4 my-5 px-5 w-[90%] lg:w-full ' placeholder='Email' />
-                        <button type='submit' className='border-2 text-white border-white py-[15px] px-6'>Subscribe</button>
+                        <input type='email' id='email' name='email' required value={formData.email} onChange={handleChange} className='block  m-auto  py-4 my-5 px-5 w-[90%] lg:w-full ' placeholder={t("Email")} />
+                        <button type='submit' className='border-2 text-white border-white py-[15px] px-6'>{t("Subscribe")}</button>
 
                     </form>
 

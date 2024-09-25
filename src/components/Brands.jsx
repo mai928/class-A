@@ -58,7 +58,7 @@ const Brands = () => {
 
     return (
         <section className='lg:px-28 py-20'>
-            <h3 className='text-center text-3xl'>Our Brands</h3>
+            <h3 className='text-center text-4xl font-semibold'>{t("Our Brands")}</h3>
 
             {
                 loading || brands.length == 0 ? (
@@ -75,7 +75,7 @@ const Brands = () => {
                     >
                         <div>
                             {brands?.map((item, index) => (
-                                <SwiperSlide key={index} className=" mt-5">
+                                <SwiperSlide key={index} className=" mt-5 border-[1px] border-gray-50 shadow-lg">
                                     {/* "bg-white rounded-lg shadow-md overflow-hidden */}
                                     <div className="p-5">
                                         <div className="text-center">
@@ -84,7 +84,7 @@ const Brands = () => {
                                             <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((truncateText(t(item.details || ''), 20))) }} />
                                             <div className='my-5'>
                                                 <Link href={`/brands/${item?.slug}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
-                                                    Read More
+                                                    {t("Read More")}
                                                 </Link>
                                             </div>
 

@@ -19,36 +19,39 @@ const Contact = async ({ params }) => {
         <section>
             <MainBackground />
 
-            <div className='h-72 bg-gray-200 bg-opacity-25'></div>
+            <div className=' h-40 lg:h-72 bg-gray-200 bg-opacity-25'></div>
             <div
                 className='relative lg:mx-28 '>
                 <div className='lg:flex justify-between '>
-                    <div className=' py-20 lg:py-10 text-center  lg:text-start'>
-                        <h3 className='text-dark_gray text-4xl'>Contact Us,</h3>
-                        <p className='text-6xl py-2'>If you</p>
-                        <p className='text-7xl font-extrabold '>Have</p>
-                        <p className='text-6xl pt-4 pb-1'>Any</p>
-                        <p className='text-6xl font-extrabold text-primary_Color_Light'>Question...</p>
+                    <div className=' py-16 lg:py-10 text-center  lg:text-start'>
+                        <h3 className={`text-dark_gray text-4xl ${locale === 'ar'?'mt-32':''}`}>{t("Contact Us")},</h3>
+                        <p className={`text-6xl py-2 ${locale === 'ar'?'my-10':''}`}>{t("If you")}</p>
+                        {
+                            locale === 'en' ? <>
+                                <p className='text-7xl font-extrabold '>Have</p>
+                                <p className='text-6xl pt-4 pb-1'>Any</p>
+                                <p className='text-6xl font-extrabold text-primary_Color_Light'>{("Question...")}</p></> : ''
+                        }
+
                     </div>
                     <div className='absolute top-[-100px] lg:top-[-200px] left-[30%]'><img src='/assets/contact.png' alt='img' /></div>
                     <div className='lg:py-10 text-center lg:text-end '>
-                        <h3 className='text-dark_gray text-4xl'>Contact info</h3>
+                        <h3 className='text-dark_gray text-4xl'>{t("Contact info")}</h3>
 
 
                         <div className='flex items-start lg:gap-5 pt-5 mx-5 lg:mx-0'>
                             <div className='w-[415px]'>
-                                <p className='text-gray-700 py-2'>Call us</p>
+                                <p className='text-gray-700 py-2'>{t("Call us")}</p>
                                 <div>
                                     {
-                                        setting?.phones?.map((item ,index) => (
-                                            <Link key={index} className='font-semibold text-2xl' href={`tel:${item}`}>
+                                        setting?.phones?.map((item, index) => (
+                                            <Link key={index} className='font-semibold text-lg lg:text-2xl' href={`tel:${item}`}>
                                                 <p>{item} </p>
                                             </Link>
                                         ))
                                     }
                                 </div>
 
-                                {/* <p className='font-semibold text-2xl'>800 516 3290</p> */}
                             </div>
                             <div className='p-2 mt-3 bg-primary_Color_Light rounded-lg'>
                                 <svg
@@ -62,14 +65,14 @@ const Contact = async ({ params }) => {
                             </div>
                         </div>
 
-                        <div className='flex items-start lg:gap-5 pt-5 mx-5 lg:mx-0'>
+                        <div className='flex items-start lg:gap-5 pt-5  mx-5 lg:mx-0'>
                             <div className='w-[415px]'>
-                                <p className='text-gray-700 py-2'>Email</p>
+                                <p className='text-gray-700 py-2'>{t("Email")}</p>
                                 <div>
                                     {
-                                        setting?.contact_emails?.map((item ,index) => (
-                                            <Link key={index} href={`mailto:${item}`}>       
-                                                <p className='font-semibold text-2xl'>{item}</p>
+                                        setting?.contact_emails?.map((item, index) => (
+                                            <Link key={index} href={`mailto:${item}`}>
+                                                <p className='font-semibold text-lg lg:text-2xl'>{item}</p>
                                             </Link>
                                         ))
                                     }
@@ -86,11 +89,11 @@ const Contact = async ({ params }) => {
                         <div className='flex items-start lg:gap-5 pt-5 mx-5 lg:mx-0'>
                             <div className='w-full lg:w-[415px]'>
                                 <div>
-                                    <p className='text-gray-700 py-2'>Branches</p>
+                                    <p className='text-gray-700 py-2'>{t("Branches")}</p>
                                     <div>
                                         {
-                                            setting?.addresses?.map((item ,index)=>(
-                                                <p key={index}>{item}</p>
+                                            setting?.addresses?.map((item, index) => (
+                                                <p className='font-semibold text-lg lg:text-2x' key={index}>{item}</p>
                                             ))
                                         }
                                     </div>
@@ -133,7 +136,7 @@ const Contact = async ({ params }) => {
             <Form />
 
             <div>
-                <div className=' px-5 lg:px-28 lg:py-20'><iframe className='w-full h-[400px] lg:h-[600px]' src={setting?.map}></iframe></div>
+                <div className=' px-5 lg:px-28 py-10 lg:py-20'><iframe className='w-full h-[400px] lg:h-[600px]' src={setting?.map}></iframe></div>
             </div>
         </section>
     )

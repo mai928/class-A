@@ -5,7 +5,7 @@ export const fetchData = async (variable, lang) => {
 		myHeaders.append("Accept-Language", lang);
 
 		// Append the cookie to the headers
-		myHeaders.append("Cookie", "laravel_session=gwHNlePT7RSASLV6ZFEw1MRgqeeM2mdfNucQv2Nn");
+		myHeaders.append("Cookie", "laravel_session=qqnKJa8kJEfXJDFZdRxVxOndbiYVEz6rjs4uLiyr");
 
 		const requestOptions = {
 			method: "GET",
@@ -44,7 +44,7 @@ export const fetchApi = async (variable, lang) => {
 		myHeaders.append("Accept-Language", lang);
 
 		// Append the cookie to the headers
-		myHeaders.append("Cookie", "laravel_session=gwHNlePT7RSASLV6ZFEw1MRgqeeM2mdfNucQv2Nn");
+		myHeaders.append("Cookie", "laravel_session=qqnKJa8kJEfXJDFZdRxVxOndbiYVEz6rjs4uLiyr");
 
 		const requestOptions = {
 			method: "POST",

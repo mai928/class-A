@@ -74,7 +74,7 @@ const Slider = () => {
 
 
                                         <div className='lg:mt-16 mb-10 text-white  text-[12px] lg:text-3xl  w-[80%]' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(slide?.details)) }} />
-                                        <Link href={'/about'} className=' my-14 bg-primary_Color_Light cursor-pointer hover:bg-primary_Color_dark text-[13px] lg:text-lg text-white py-3 px-4 '>Discover More</Link>
+                                        <Link href={'/about'} className=' my-14 bg-primary_Color_Light cursor-pointer hover:bg-primary_Color_dark text-[13px] lg:text-lg text-white py-3 px-4 '>{t("Discover More")}</Link>
 
                                     </div>
 

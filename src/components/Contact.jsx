@@ -2,14 +2,10 @@
 import React, { useState } from 'react'
 import Subscription from './Subscription'
 import { useTranslation } from 'react-i18next';
-import initTranslations from '@/app/i18n';
 
-const Contact = ({ params }) => {
-    const i18nNamespaces = ["home"];
+const Contact = () => {
 
-    const { locale } = params
-    // const { t, i18n } = await initTranslations(locale ,i18nNamespaces)
-    const { t, i18n } = useTranslation()
+     const { t, i18n } = useTranslation()
 
     const [formData, setFormData] = useState({
         name: '',
@@ -48,7 +44,7 @@ const Contact = ({ params }) => {
 
             const myHeaders = new Headers();
             myHeaders.append("Accept-Language", i18n.language);
-            myHeaders.append("Cookie", "laravel_session=6oM3FFaszfcS2bV3nWtBQrSNpkdvu3BvQxhRc6h0");
+            myHeaders.append("Cookie", "laravel_session=qqnKJa8kJEfXJDFZdRxVxOndbiYVEz6rjs4uLiyr");
 
 
             const formdata = new FormData();
@@ -92,18 +88,19 @@ const Contact = ({ params }) => {
         <section className='contact-bg'>
             <div className=' block lg:flex  gap-20 items-center lg:mx-28 py-20'>
                 <div className='lg:w-[50%]'>
-                    <h3 className='text-3xl text-center lg:text-start lg:text-6xl font-semibold leading-snug'>
-                        If you have questions,contact us
+                    <h3 className='text-3xl text-center lg:text-start  text-[45px] w-[75%] font-semibold leading-[75px]'>
+                        {/* If you have questions,contact us */}
+                       {t("If you have an inquiry, we are happy to receive your inquiry at any time.")}
                     </h3>
                 </div>
 
                 <form onSubmit={handleSubmit} className='lg:w-[50%] mx-5 lg:mx-0'>
-                    <input onChange={handleChange} type='text' name='name' id='name' value={formData.name} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder='Name' />
-                    <input onChange={handleChange} type='email' name='email' id='email' value={formData.email} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder='Email' />
-                    <input onChange={handleChange} type='text' name='phone' id='phone' value={formData.phone} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder='Phone' />
-                    <textarea onChange={handleChange} name='message' id='message' value={formData.message} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder='Message' cols={5} />
+                    <input onChange={handleChange} type='text' name='name' id='name' value={formData.name} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder={t('Name' )}/>
+                    <input onChange={handleChange} type='email' name='email' id='email' value={formData.email} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder={t('Email')} />
+                    <input onChange={handleChange} type='text' name='phone' id='phone' value={formData.phone} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder={t('Phone')} />
+                    <textarea onChange={handleChange} name='message' id='message' value={formData.message} required className='block border-[1px] text-gray-700 placeholder:text-gray-700  border-slate-200  py-3 my-5 px-5 w-full' placeholder={t('Message')} cols={5} />
                     <div className='flex justify-end'>
-                        <button type='submit' className=' bg-primary_Color_Light hover:bg-primary_Color_dark text-white  text-lg py-2 px-10'>Send</button>
+                        <button type='submit' className=' bg-primary_Color_Light hover:bg-primary_Color_dark text-white  text-lg py-2 px-10'>{t("Send")}</button>
 
                     </div>
 

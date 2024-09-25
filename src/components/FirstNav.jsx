@@ -74,13 +74,13 @@ const FirstNav = ({ showmenuIcon }) => {
                                         ))
                                     }
                                 </div>
-                                <p className='text-dark_gray text-[15px]'>Our email</p>
+                                <p className='text-dark_gray text-[15px]'>{t("Our email")}</p>
                             </div>
                         </div>
 
 
 
-                        <div className='flex gap-5 items-center'>
+                        {/* <div className='flex gap-5 items-center'>
                             <div className='px-2 py-2 rounded-lg bg-dark_gray'>
 
                                 <svg
@@ -101,7 +101,7 @@ const FirstNav = ({ showmenuIcon }) => {
                                 }
                                 <p className='text-dark_gray text-[15px]'>9:00 A.M - 5:00 P.M</p>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* <div>
                             <Link href={'/'} className='bg-primary_Color_Light  hover:bg-primary_Color_dark  text-white py-3 px-10 text-center text-lg'>Contact</Link>

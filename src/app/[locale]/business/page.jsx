@@ -6,6 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 import { fetchData } from '../../../../utils/api'
 import initTranslations from '@/app/i18n'
+import DOMPurify from 'isomorphic-dompurify'
 
 const Business = async ({ params }) => {
 
@@ -35,7 +36,7 @@ const Business = async ({ params }) => {
 
         <div className='text-center'>
           <h3 className='text-4xl'>Our Philosophy</h3>
-          <p className='text-[17px] py-4 text-gray-600 mx-10'>{Philosophy?.details}</p>
+          <div className='text-[17px] py-4 text-gray-600 mx-10 ' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(Philosophy?.details )) }} />
         </div>
 
         <div className='text-center'>
@@ -46,8 +47,9 @@ const Business = async ({ params }) => {
               business?.map((item, index) => (
                 <div className={`${index == 2 ?'lg:':''}  my-5 lg:mt-0 border-gray-300 border-[1px] rounded-lg text-center p-5`}>
                   {index == 0 ? (<Vision />) : index == 1 ? (<Mission />) : (<Values />)}
-                  <h4 className='font-semibold text-xl'>{item?.title}</h4>
-                  <p className='text-[16px] text-gray-600 py-3'>{item?.details} </p>
+                  <h4 className='font-semibold text-xl'>{t(item?.title)}</h4>
+                  <div className='text-[16px] text-gray-600 py-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(item?.details )) }} />
+
                 </div>
               ))
             }
