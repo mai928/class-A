@@ -2,9 +2,13 @@
 import React, { useState } from 'react'
 import ProgressBar from "@ramonak/react-progress-bar";
 import Link from 'next/link';
+import { fetchData } from '../../utils/api';
 
 const Video = () => {
     const [showImage, setShowImage] = useState(true);
+
+   
+
     return (
         <section className='bg-partner ' >
 
