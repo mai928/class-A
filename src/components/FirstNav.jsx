@@ -67,8 +67,8 @@ const FirstNav = ({ showmenuIcon }) => {
                             <div>
                                 <div>
                                     {
-                                        setting?.contact_emails?.map((item) => (
-                                            <Link href={`mailto:${item}`}> 
+                                        setting?.contact_emails?.map((item ,index) => (
+                                            <Link key={index} href={`mailto:${item}`}> 
                                                  <p className='text-dark_gray text-xl'>{item}</p>
                                             </Link>
                                         ))

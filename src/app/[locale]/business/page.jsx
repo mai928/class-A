@@ -45,7 +45,7 @@ const Business = async ({ params }) => {
           <div className=' gap-10 mx-3 lg:mx-0'>
             {
               business?.map((item, index) => (
-                <div className={`${index == 2 ?'lg:':''}  my-5 lg:mt-0 border-gray-300 border-[1px] rounded-lg text-center p-5`}>
+                <div key={index} className={`${index == 2 ?'lg:':''}  my-5 lg:mt-0 border-gray-300 border-[1px] rounded-lg text-center p-5`}>
                   {index == 0 ? (<Vision />) : index == 1 ? (<Mission />) : (<Values />)}
                   <h4 className='font-semibold text-xl'>{t(item?.title)}</h4>
                   <div className='text-[16px] text-gray-600 py-3' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(item?.details )) }} />
