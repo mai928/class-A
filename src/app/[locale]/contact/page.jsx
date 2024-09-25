@@ -40,8 +40,8 @@ const Contact = async ({ params }) => {
                                 <p className='text-gray-700 py-2'>Call us</p>
                                 <div>
                                     {
-                                        setting?.phones?.map((item) => (
-                                            <Link className='font-semibold text-2xl' href={`tel:${item}`}>
+                                        setting?.phones?.map((item ,index) => (
+                                            <Link key={index} className='font-semibold text-2xl' href={`tel:${item}`}>
                                                 <p>{item} </p>
                                             </Link>
                                         ))
@@ -67,8 +67,8 @@ const Contact = async ({ params }) => {
                                 <p className='text-gray-700 py-2'>Email</p>
                                 <div>
                                     {
-                                        setting?.contact_emails?.map((item) => (
-                                            <Link href={`mailto:${item}`}>       
+                                        setting?.contact_emails?.map((item ,index) => (
+                                            <Link key={index} href={`mailto:${item}`}>       
                                                 <p className='font-semibold text-2xl'>{item}</p>
                                             </Link>
                                         ))
@@ -89,8 +89,8 @@ const Contact = async ({ params }) => {
                                     <p className='text-gray-700 py-2'>Branches</p>
                                     <div>
                                         {
-                                            setting?.addresses?.map((item)=>(
-                                                <p>{item}</p>
+                                            setting?.addresses?.map((item ,index)=>(
+                                                <p key={index}>{item}</p>
                                             ))
                                         }
                                     </div>

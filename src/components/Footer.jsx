@@ -70,8 +70,8 @@ const Footer = async ({ params }) => {
                         <p className='text-dark_gray w-16 '>Address: </p>
                         <div className='block'>
                             {
-                                setting?.addresses.map((item) => (
-                                    <p className='font-bold text-white'>{item}</p>
+                                setting?.addresses.map((item, index) => (
+                                    <p key={index} className='font-bold text-white'>{item}</p>
 
                                 ))
                             }   </div>
@@ -84,8 +84,8 @@ const Footer = async ({ params }) => {
                         <p className='text-dark_gray w-16 '>Email:</p>
                         <div className='block '>
                             {
-                                setting?.contact_emails?.map((item) => (
-                                    <p className='font-bold text-white'>{item}</p>
+                                setting?.contact_emails?.map((item ,index) => (
+                                    <p key={index} className='font-bold text-white'>{item}</p>
 
                                 ))
                             }
@@ -105,8 +105,8 @@ const Footer = async ({ params }) => {
                         </svg>
                         <p className='text-dark_gray  w-16'>phone: </p>
                         <div className='block '> {
-                            setting?.phones?.map((item) => (
-                                <p className='font-bold text-white py-1'>{item}</p>
+                            setting?.phones?.map((item ,index) => (
+                                <p  key={index}className='font-bold text-white py-1'>{item}</p>
 
                             ))
                         }

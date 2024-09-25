@@ -43,7 +43,7 @@ const Form = () => {
 
       const myHeaders = new Headers();
       myHeaders.append("Accept-Language", i18n.language);
-      myHeaders.append("Cookie", "laravel_session=6oM3FFaszfcS2bV3nWtBQrSNpkdvu3BvQxhRc6h0");
+      myHeaders.append("Cookie", "laravel_session=gwHNlePT7RSASLV6ZFEw1MRgqeeM2mdfNucQv2Nn");
 
 
       const formdata = new FormData();
@@ -55,9 +55,9 @@ const Form = () => {
       const requestOptions = {
         method: "POST",
         headers: myHeaders,
-        body: formdata,
+        body: formdata ,
         redirect: "follow",
-      };
+       };                      
       const response = await fetch('https://api.classafoods.com/api/contact-submit', requestOptions);
 
       const result = await response.json();
