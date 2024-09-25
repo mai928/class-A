@@ -5,6 +5,30 @@ import Link from 'next/link'
 import React from 'react'
 import { fetchData } from '../../../../../../utils/api'
 
+
+export async function generateMetadata({ params }) {
+    const {singleproduct } =params
+
+    const { locale } = params
+    const response = await fetchData(`api/single-service/${singleproduct}`, locale)
+    const categories = response.data
+  
+  
+    return {
+      title: categories.meta_title  || "",
+      description: categories.meta_title || "",
+      other: {
+        title: categories.meta_details || "",
+      }
+  
+    }
+  }
+
+
+
+
+
+
 const SingleProduct = async({params}) => {
     const {singleproduct } =params
 

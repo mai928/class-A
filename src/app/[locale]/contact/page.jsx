@@ -4,6 +4,30 @@ import MainBackground from '@/components/MainBackground'
 import React from 'react'
 import { fetchData } from '../../../../utils/api';
 import Link from 'next/link';
+
+
+
+
+
+
+export async function generateMetadata({ params }) {
+    const { locale } = params
+  
+    return {
+        title: locale === 'ar' ? 'وسائل تواصل مع  | Class A' : locale === 'en' ? "contact us   | Class A" :'',
+        description:  locale === 'ar' ? 'وسائل تواصل مع  | Class A' : locale === 'en' ? "contact us   | Class A" :'',
+        other: {
+            title: locale === 'ar' ? 'وسائل تواصل مع  | Class A' : locale === 'en' ? "contact us   | Class A" :'',
+        }
+  
+    }
+  }
+
+
+
+
+
+
 const Contact = async ({ params }) => {
     const i18nNamespaces = ["home"];
 

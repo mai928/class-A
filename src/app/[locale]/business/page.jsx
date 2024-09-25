@@ -8,6 +8,26 @@ import { fetchData } from '../../../../utils/api'
 import initTranslations from '@/app/i18n'
 import DOMPurify from 'isomorphic-dompurify'
 
+
+
+
+
+export async function generateMetadata({ params }) {
+  const { locale } = params
+
+  return {
+      title: locale === 'ar' ? 'اهدافنا و رؤيتنا و مهمتنا عن | Class A' : locale === 'en' ? "the vision , mission  and our goals   about  | Class A" : '',
+      description: locale === 'ar' ? 'اهدافنا و رؤيتنا و مهمتنا عن | Class A' : locale === 'en' ? "the vision , mission  and our goals   about  | Class A" : '',
+      other: {
+          title: locale === 'ar' ? 'اهدافنا و رؤيتنا و مهمتنا عن | Class A' : locale === 'en' ? "the vision , mission  and our goals   about  | Class A" : '',
+      }
+
+  }
+}
+
+
+
+
 const Business = async ({ params }) => {
 
   const i18nNamespaces = ["home"];

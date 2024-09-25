@@ -7,6 +7,26 @@ import Link from 'next/link'
 import React from 'react'
 import { fetchData } from '../../../../utils/api'
 
+
+
+export async function generateMetadata({ params }) {
+    const { locale } = params
+    const response = await fetchData('api/categories', locale)
+    const categories = response.data
+  
+  
+    return {
+      title: categories.meta_title  || "",
+      description: categories.meta_title || "",
+      other: {
+        title: categories.meta_details || "",
+      }
+  
+    }
+  }
+
+
+
 const Brandspage = async ({ params }) => {
 
     const truncateText = (text, wordCount) => {

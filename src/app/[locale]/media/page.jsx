@@ -6,7 +6,27 @@ import React from 'react'
 import { fetchData } from '../../../../utils/api'
 import initTranslations from '@/app/i18n'
 
+
+
+
+export async function generateMetadata({ params }) {
+    const { locale } = params
+
+    return {
+        title: locale === 'ar' ? 'فيديوهات عن | Class A' : locale === 'en' ? "Videos  about  | Class A" : '',
+        description: locale === 'ar' ? 'فيديوهات عن | Class A' : locale === 'en' ? "Videos  about  | Class A" : '',
+        other: {
+            title: locale === 'ar' ? 'فيديوهات عن | Class A' : locale === 'en' ? "Videos  about  | Class A" : '',
+        }
+
+    }
+}
+
+
+
 const Media =async ({params}) => {
+
+
     
 
     const truncateText = (text, wordCount) => {

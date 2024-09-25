@@ -6,6 +6,28 @@ import DOMPurify from 'isomorphic-dompurify'
 import MainBackground from '@/components/MainBackground'
 import initTranslations from '@/app/i18n'
 import { fetchData } from '../../../../../utils/api'
+import LoaderComponent from '@/components/LoaderComponent'
+
+
+
+export async function generateMetadata({ params }) {
+    const slug = params.slug
+
+    const { locale } = params
+    const response = await fetchData(`api/single-category/${slug}`, locale)
+    const categories = response.data
+  
+  
+    return {
+      title: categories.meta_title  || "",
+      description: categories.meta_title || "",
+      other: {
+        title: categories.meta_details || "",
+      }
+  
+    }
+  }
+
 
 const BrandDetails = async ({ params }) => {
 
@@ -59,32 +81,42 @@ const BrandDetails = async ({ params }) => {
                         <p className='text-primary_Color_dark py-3 font-semibold text-xl'>{t(brandsDetails?.title)}</p>
                         <h3 className='text-6xl font-semibold'>{t("Our Product")}</h3>
                     </div>
-                    <div className='grid grid-cols-1 lg:grid-cols-2  lg:gap-10 lg:mx-16 py-10'>
-                        {brandsDetails?.products?.map((item, index) => (
-                            <div key={index} className=" mt-5  border-2 border-gray-100 rounded-xl shadow-lg">
-                                <div className="">
-                                    <div className="text-center">
-                                        <img className='mx-auto  w-72 h-72 lg:w-full object-cover' alt={'img'} src={item.photo} />
-                                        <div className='py-5'> <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{t(item.title)}</h2>
-                                            <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{
-                                                __html: DOMPurify.sanitize(t(truncateText(item.details, 20)), {
-                                                    ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br', 'ul', 'li', 'ol', 'span'],
-                                                    ALLOWED_ATTR: ['href', 'target', 'style']
-                                                })
-                                            }} />
-                                            <div className='my-5'>
-                                                <Link href={`/brands/singleproduct/${item.slug}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
-                                                    {t("Read More")}
-                                                </Link>
+
+
+                    {
+                        brandsDetails?.products?.length == 0? <>
+                          <p className='text-center pt-20 capitalize text-xl text-gray-500 font-semibold'> NO data found</p>
+                        </> : (<div className='grid grid-cols-1 lg:grid-cols-2  lg:gap-10 lg:mx-16 py-10'>
+                            {brandsDetails?.products?.map((item, index) => (
+                                <div key={index} className=" mt-5  border-2 border-gray-100 rounded-xl shadow-lg">
+                                    <div className="">
+                                        <div className="text-center">
+                                            <img className='mx-auto  w-72 h-72 lg:w-full object-cover' alt={'img'} src={item.photo} />
+                                            <div className='py-5'> <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{t(item.title)}</h2>
+                                                <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{
+                                                    __html: DOMPurify.sanitize(t(truncateText(item.details, 20)), {
+                                                        ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'p', 'br', 'ul', 'li', 'ol', 'span'],
+                                                        ALLOWED_ATTR: ['href', 'target', 'style']
+                                                    })
+                                                }} />
+                                                <div className='my-5'>
+                                                    <Link href={`/brands/singleproduct/${item.slug}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
+                                                        {t("Read More")}
+                                                    </Link>
+                                                </div>
                                             </div>
+
+
                                         </div>
-
-
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>)
+                    }
+
+
+
+
                 </div>
 
 
