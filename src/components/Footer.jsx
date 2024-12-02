@@ -24,14 +24,14 @@ const Footer = async ({ params }) => {
     return (
         <section className='bg-footer relative lg:px-28 lg:py-20 z-0'>
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black opacity-80 z-10"></div>
+            <div className="absolute inset-0 bg-black opacity-90 z-10"></div>
 
             {/* Content */}
             <div className='relative z-20 block lg:flex items-center  gap-10  text-center lg:text-start'>
 
                 <div className='lg:w-[40%]'>
                     <div className='py-10'>
-                        <img alt='logo' className='w-64 m-auto lg:m-0' src={setting?.logo} />
+                        <img alt='logo' className='w-52 m-auto lg:m-0' src={setting?.logo} />
                     </div>
                     <p className="text-dark_gray text-lg ">{t(setting?.footer)}</p>
 

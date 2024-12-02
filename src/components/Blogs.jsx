@@ -55,7 +55,6 @@ const Blogs = () => {
     }, [])
 
 
-    console.log(blogs)
     return (
         <section className='lg:px-28 py-20'>
 
@@ -82,7 +81,7 @@ const Blogs = () => {
                                         <h2 className="text-xl font-bold text-slate-800  mb-2 mt-5">{t(item?.title)}</h2>
                                         <div className=" text-[15px] text-dark_gray  font-[500] " dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize((truncateText(t(item?.details || ''), 20))) }} />
                                         <div className='my-10'>
-                                            <Link href={`/`} className={'text-black border-2 border-gray-400   hover:border-primary_Color_Light hover:text-primary_Color_Light py-3 px-4'} >
+                                            <Link href={`/blogs/${item.slug}`} className={'text-black border-2 border-gray-400   hover:border-primary_Color_Light hover:text-primary_Color_Light py-3 px-4'} >
                                                 {t("Read More")}
                                             </Link>
                                         </div>

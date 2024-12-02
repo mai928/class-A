@@ -54,11 +54,11 @@ const SecondNav = ({ showmenuIcon }) => {
     <>
       {
         showmenuIcon === false && (<section
-          className={`w-full z-50   ${isFixed ? 'fixed top-0 bg-black py-1' : 'absolute top-32'
+          className={`w-full z-50   ${isFixed ? 'fixed top-0 bg-black py-1 ' : 'absolute top-32'
             }`}>
           <div className='flex  items-center w-full justify-between px-28 '>
             <div>
-              <img alt='logo' className={`${isFixed ? 'w-40' : 'w-48'}`} src={settings?.logo} />
+              <img alt='logo' className={`${isFixed ? 'w-24' : 'w-32'}`} src={settings?.logo} />
             </div>
 
             <div className='flex gap-10 '>

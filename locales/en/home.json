@@ -20,10 +20,15 @@
   "Subscribe":"Subscribe",
   "Our Product":"Our Product",
    "ABOUT":"ABOUT",
+   "about":"about",
    "BRANDS":"BRANDS",
    "MEDIA":"MEDIA",
+   "media":"media",
+   "brands":"brands",
    "BUSINESS":"BUSINESS",
+   "business":"business",
    "Contact Us":"Contact Us",
+   "contact":"contact",
    "If you":"If you",
    "Contact info":"Contact info",
    "Call us":"Call us",
@@ -45,6 +50,12 @@
     "Name":"Name",
     "Message":"Message",
     "Send":"Send",
-    "If you have question , feel free to get in touch":"If you have question , feel free to get in touch"
+    "If you have question , feel free to get in touch":"If you have question , feel free to get in touch",
+    "Show Videos":"Show Videos",
+    "Our Philosophy":"Our Philosophy",
+    "Our Vision , Mission and Values":"Our Vision , Mission and Values",
+    "blogs":"blogs",
+    "Blogs":"Blogs",
+    "BLOGS":"BLOGS"
 
 }

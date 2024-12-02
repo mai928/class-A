@@ -100,7 +100,7 @@ const BrandDetails = async ({ params }) => {
                                                     })
                                                 }} />
                                                 <div className='my-5'>
-                                                    <Link href={`/brands/singleproduct/${item.slug}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
+                                                    <Link href={`/brands/${t(brandsDetails?.slug)}/${t(item.slug)}`} className={'text-white  bg-primary_Color_Light hover:bg-primary_Color_dark py-3 px-4'} >
                                                         {t("Read More")}
                                                     </Link>
                                                 </div>

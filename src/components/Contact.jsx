@@ -62,7 +62,7 @@ const Contact = () => {
             const response = await fetch('https://api.classafoods.com/api/contact-submit', requestOptions);
 
             const result = await response.json();
-            console.log(result)
+            // console.log(result)
 
             if (response.status && result.data) {
                 setResponseMessage('Message sent successfully!');
@@ -88,7 +88,9 @@ const Contact = () => {
         <section className='contact-bg'>
             <div className=' block lg:flex  gap-20 items-center lg:mx-28 py-20'>
                 <div className='lg:w-[50%]'>
-                    <h3 className='text-3xl text-center lg:text-start  text-[45px] w-[75%] font-semibold leading-[75px]'>
+                {/* <h3 className='lg:text-3xl text-start ms-10 lg:ms-0 text-[25px] w-[75%] font-semibold lg:leading-[75px]'> */}
+
+                    <h3 className='text-[25px] text-start ms-10 lg:ms-0 lg:text-[45px] w-[75%] font-semibold lg:leading-[75px]'>
                         {/* If you have questions,contact us */}
                        {t("If you have an inquiry, we are happy to receive your inquiry at any time.")}
                     </h3>

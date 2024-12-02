@@ -128,12 +128,12 @@ export const navbarLink = [
 
 export const sliderData = [
 	{
-		img: 'assets/bg2-remove.jpeg',
+		// img: 'assets/bg2-remove.jpeg',
 		heading: "Save the Life",
 		desc: "Help People for their needs all over the world!"
 	},
 	{
-		img: 'assets/slider11-remove.jpeg',
+		// img: 'assets/slider11-remove.jpeg',
 		heading: "Save the Life",
 		desc: "Help People for their needs all over the world!"
 	}
@@ -142,25 +142,25 @@ export const sliderData = [
 export const services = [
 	{
 		id: 1,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Brand1",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 2,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Brand2",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 3,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Brand3",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 4,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Brand4",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
@@ -168,25 +168,25 @@ export const services = [
 export const produscts = [
 	{
 		id: 1,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Product1",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 2,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Product2",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 3,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Product3",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 4,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Product4",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
@@ -196,25 +196,25 @@ export const produscts = [
 export const blogsData = [
 	{
 		id: 1,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Test-Bottle1",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 2,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Test-Bottle2",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 3,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Test-Bottle3",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
 	{
 		id: 4,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		title: "Test-Bottle4",
 		desc: "Medical is the knowledge or master event. Identify the error of the we coding page speed.",
 	},
@@ -223,41 +223,41 @@ export const blogsData = [
 export const brandImages = [
 	{
 		id: 1,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		name: 'Name1'
 
 	},
 	{
 		id: 2,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		name: 'Name1'
 
 
 	},
 	{
 		id: 3,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		name: 'Name1'
 
 
 	},
 	{
 		id: 4,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		name: 'Name1'
 
 
 	}, ,
 	{
 		id: 5,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		name: 'Name1'
 
 
 	},
 	{
 		id: 6,
-		src: '/assets/service.jpg',
+		// src: '/assets/service.jpg',
 		name: 'Name1'
 
 
@@ -268,22 +268,22 @@ export const brandImages = [
 export const mediaData = [
 	{
 		id: 1,
-		src: '/media/video1.mp4',
+		// src: '/media/video1.mp4',
 
 	},
 	{
 		id: 2,
-		src: '/media/video1.mp4',
+		// src: '/media/video1.mp4',
 
 	},
 	{
 		id: 3,
-		src: '/media/video1.mp4',
+		// src: '/media/video1.mp4',
 
 	},
 	{
 		id: 4,
-		src: '/media/video1.mp4',
+		// src: '/media/video1.mp4',
 
 	},
 ];

@@ -55,12 +55,12 @@ const Business = async ({ params }) => {
       <div className='lg:mx-28 py-20'>
 
         <div className='text-center'>
-          <h3 className='text-4xl'>Our Philosophy</h3>
+          <h3 className='text-4xl'>{t("Our Philosophy")}</h3>
           <div className='text-[17px] py-4 text-gray-600 mx-10 ' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(Philosophy?.details )) }} />
         </div>
 
         <div className='text-center'>
-          <h3 className='text-3xl lg:text-4xl py-10 px-3 lg:px-0'>Our Vision , Mission and Values</h3>
+          <h3 className='text-3xl lg:text-4xl py-10 px-3 lg:px-0'>{t("Our Vision , Mission and Values")}</h3>
 
           <div className=' gap-10 mx-3 lg:mx-0'>
             {

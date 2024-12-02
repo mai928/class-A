@@ -15,7 +15,7 @@ export default function Home({params}) {
 			<About params={params} />
 			<Brands/>
 			<Video/>
-			<Blogs />
+			{/* <Blogs /> */}
 			<Contact params={params} />
 			<Team/>
 		</main>

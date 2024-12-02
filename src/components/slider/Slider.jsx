@@ -65,16 +65,16 @@ const Slider = () => {
                             sliderData.map((slide, index) => (
                                 <SwiperSlide key={index} className="swiper-slide relative">
                                     <div className='relative'>
-                                        <img className='w-full h-[60vb] lg:h-[110vb] ' loading='eager' alt='img' src={slide?.photo} />
-                                        <div className='absolute top-0 bottom-0 right-0 left-0 bg-black bg-opacity-50'></div>
+                                        <img className='w-full h-[50vb] lg:h-[100vb] object-cover lg:object-fill ' loading='lazy' alt='img' src={slide?.photo} />
+                                        {/* <div className='absolute top-0 bottom-0 right-0 left-0 bg-black bg-opacity-50'></div> */}
 
                                     </div>
-                                    <div className='absolute inset-0 top-72 lg:top-52 flex flex-col justify-center text-center items-center animatedText'>
+                                    <div className='absolute inset-0 top-48 lg:top-52 flex flex-col justify-center text-center items-center animatedText'>
                                         <h2 className=' text-lg lg:text-7xl text-white w-[80%]'>{t(slide?.title)}</h2>
 
 
-                                        <div className='lg:mt-16 mb-10 text-white  text-[12px] lg:text-3xl  w-[80%]' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(slide?.details)) }} />
-                                        <Link href={'/about'} className=' my-14 bg-primary_Color_Light cursor-pointer hover:bg-primary_Color_dark text-[13px] lg:text-lg text-white py-3 px-4 '>{t("Discover More")}</Link>
+                                        <div className='lg:mt-16 lg:mb-10 text-white  text-[12px] lg:text-3xl  w-[80%]' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(t(slide?.details)) }} />
+                                        <Link href={'/about'} className=' lg:my-14 bg-primary_Color_Light cursor-pointer hover:bg-primary_Color_dark text-[13px] lg:text-lg text-white py-3 px-4 shadow-lg'>{t("Discover More")}</Link>
 
                                     </div>
 

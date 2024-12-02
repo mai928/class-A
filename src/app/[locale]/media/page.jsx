@@ -45,11 +45,11 @@ const Media =async ({params}) => {
         <section>
           <MainBackground/>
             <div className=' px-5 lg:px-28 py-10'>
-                <div className='grid grid-cols-1  lg:grid-cols-2 gap-10 '>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
                     {
                         videoData.map((item, index) => (
                             <div className='' key={index}>
-                                <video controls src={item?.media} />
+                                <video className='bg-black w-full h-[500px]' controls src={item?.media} />
 
                             </div>
                         ))

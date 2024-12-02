@@ -11,6 +11,7 @@
     "Read More":"أقرأ المزيد",
     "Our Brands":"البرندات",
     "About Us":"معلومات عنا",
+
     "Innovations & Integration to lead the market.":"الابتكارات والتكامل لقيادة السوق.",
    "Class A Food Industries, operating branches & warehouses network, plays a vital role in streamlining the supply chain by connecting our factory with different market sectors":"تلعب شركهClass A  دورًا حيويًا في تبسيط سلسلة التوريد من خلال ربط مصنعنا بقطاعات السوق المختلفة",
    "Show More":"أكتشف المزيد", 
@@ -22,9 +23,14 @@
    "Subscribe":"أشترك",
    "Our Product":"منتجاتنا",
    "ABOUT":"معلومات عنا",
+   "about":"معلومات عنا" ,
+"contact":"تواصل معنا",
    "BRANDS":"البرندات",
    "MEDIA":"الفيديوهات",
+   "media":"الفيديوهات",
+   "brands":"البرندات",
    "BUSINESS":"أهدافنا",
+   "business":"أهدافنا",
    "Contact Us":"تواصل معنا",
    "If you":"اذا لديك اى استفسار",
    "Contact info":"بيانات التواصل",
@@ -48,7 +54,14 @@
    "Name":"الاسم",
     "Message":"الرسالة",
     "Send":"إرسال",
-   "If you have question , feel free to get in touch":"إذا كان لديك سؤال، فلا تتردد في الاتصال بنا"
+   "If you have question , feel free to get in touch":"إذا كان لديك سؤال، فلا تتردد في الاتصال بنا",
+   "Show Videos":"عرض الفيديوهات",
+   "Our Philosophy":"أهدافنا",
+    "Our Vision , Mission and Values":"رؤيتنا و مهمتنا و قيمنا",
+    "blogs":"مقالات",
+    "Blogs":"المقالات",
+    "BLOGS":"المقالات"
+
 
 
    
